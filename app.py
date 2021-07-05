@@ -95,4 +95,9 @@ def download(name):
         logger.warn(str(e))
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    import sys
+    try:
+        app.run(debug=False)
+    except KeyboardInterrupt:
+        logger.error("Keyboard Interrupted!")
+        sys.exit(0)
