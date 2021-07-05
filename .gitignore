@@ -1,0 +1,4 @@
+/testvenv/
+*.pyc
+
+/.ipynb_checkpoints/

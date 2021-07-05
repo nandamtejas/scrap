@@ -1,0 +1,27 @@
+{% extends 'ss.html' %}
+{% block content %}
+    <div class="main_body">
+        <div class="content_episode recent_sub datagrild">
+        <ul class="items">
+            {% for data in datas %}
+            <li>
+            <a href={{ url_for('download',name=data['anime_name']) }} title="{{data['anime_name']}}">
+                <div class="thumb_anime" style="background: url({{data['thumb_img']}});">
+                <div class="bottom">
+                    <div class="name">{{data['anime_name']}}</div>
+                    <div class="episode ">{{data['episode_number']}}</div>
+                    <span class="time_ago"> {{data['time_ago']}}</span>
+                </div>
+                </div>
+                <div class="thumb_anime_hor oven">
+                <span class="sub ">SUB</span>
+                <span class="name">{{data['anime_name']}}</span>
+                <span class="time_ago"> {{data['time_ago']}}</span>
+                </div>
+            </a>
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+{% endblock %}
